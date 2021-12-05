@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33F1AB76FF3B93F820616B8B /* Pods_Piutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE464AC2C20F1F4FFFFF5D11 /* Pods_Piutter.framework */; };
 		5B0A69EB2759C979006D664F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0A69EA2759C979006D664F /* AppDelegate.swift */; };
 		5B0A69ED2759C979006D664F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0A69EC2759C979006D664F /* SceneDelegate.swift */; };
 		5B0A69F22759C979006D664F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B0A69F02759C979006D664F /* Main.storyboard */; };
@@ -18,6 +19,11 @@
 		5B0A6A0B2759CF13006D664F /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0A6A0A2759CF13006D664F /* NotificationsController.swift */; };
 		5B0A6A0D2759CF2D006D664F /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0A6A0C2759CF2D006D664F /* ConversationsController.swift */; };
 		5B0A6A102759D27F006D664F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0A6A0F2759D27F006D664F /* Constants.swift */; };
+		5B9446A8275A8EE800E4BFC5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9446A7275A8EE800E4BFC5 /* Extensions.swift */; };
+		5B9446AA275A968B00E4BFC5 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9446A9275A968B00E4BFC5 /* LoginController.swift */; };
+		5B9446AE275A975700E4BFC5 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9446AD275A975700E4BFC5 /* RegistrationController.swift */; };
+		5B9446B1275AAF4500E4BFC5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9446B0275AAF4500E4BFC5 /* Utilities.swift */; };
+		5B9446B3275C492700E4BFC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B9446B2275C492700E4BFC5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,14 @@
 		5B0A6A0A2759CF13006D664F /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		5B0A6A0C2759CF2D006D664F /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		5B0A6A0F2759D27F006D664F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B9446A7275A8EE800E4BFC5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5B9446A9275A968B00E4BFC5 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		5B9446AD275A975700E4BFC5 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		5B9446B0275AAF4500E4BFC5 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5B9446B2275C492700E4BFC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7DC41B73C91F47F34B87C3D /* Pods-Piutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piutter.release.xcconfig"; path = "Target Support Files/Pods-Piutter/Pods-Piutter.release.xcconfig"; sourceTree = "<group>"; };
+		DE464AC2C20F1F4FFFFF5D11 /* Pods_Piutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23510BAFE9C16D61EE5097B /* Pods-Piutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piutter.debug.xcconfig"; path = "Target Support Files/Pods-Piutter/Pods-Piutter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +55,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F1AB76FF3B93F820616B8B /* Pods_Piutter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DDB747005786672B66E440E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE464AC2C20F1F4FFFFF5D11 /* Pods_Piutter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B0A69DE2759C979006D664F = {
 			isa = PBXGroup;
 			children = (
 				5B0A69E92759C979006D664F /* Piutter */,
 				5B0A69E82759C979006D664F /* Products */,
+				E821764AE52C91DA9A195510 /* Pods */,
+				4DDB747005786672B66E440E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +104,7 @@
 				5B0A69F52759C97C006D664F /* LaunchScreen.storyboard */,
 				5B0A69F82759C97C006D664F /* Info.plist */,
 				5B0A6A0F2759D27F006D664F /* Constants.swift */,
+				5B9446B2275C492700E4BFC5 /* GoogleService-Info.plist */,
 			);
 			path = Piutter;
 			sourceTree = "<group>";
@@ -93,6 +119,7 @@
 		5B0A69FF2759CA07006D664F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5B9446AC275A974100E4BFC5 /* Auth */,
 				5B0A6A042759CC52006D664F /* MainTabBarController.swift */,
 				5B0A6A062759CE4B006D664F /* FeedController.swift */,
 				5B0A6A082759CEB9006D664F /* ExploreController.swift */,
@@ -126,8 +153,29 @@
 		5B0A6A032759CA75006D664F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B9446A7275A8EE800E4BFC5 /* Extensions.swift */,
+				5B9446B0275AAF4500E4BFC5 /* Utilities.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		5B9446AC275A974100E4BFC5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5B9446A9275A968B00E4BFC5 /* LoginController.swift */,
+				5B9446AD275A975700E4BFC5 /* RegistrationController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E821764AE52C91DA9A195510 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E23510BAFE9C16D61EE5097B /* Pods-Piutter.debug.xcconfig */,
+				B7DC41B73C91F47F34B87C3D /* Pods-Piutter.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B0A69FB2759C97C006D664F /* Build configuration list for PBXNativeTarget "Piutter" */;
 			buildPhases = (
+				4D2C0BA78425A891D171A236 /* [CP] Check Pods Manifest.lock */,
 				5B0A69E32759C979006D664F /* Sources */,
 				5B0A69E42759C979006D664F /* Frameworks */,
 				5B0A69E52759C979006D664F /* Resources */,
+				3D653CB1CF91ABF33B12F598 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B0A69F72759C97C006D664F /* LaunchScreen.storyboard in Resources */,
+				5B9446B3275C492700E4BFC5 /* GoogleService-Info.plist in Resources */,
 				5B0A69F42759C97C006D664F /* Assets.xcassets in Resources */,
 				5B0A69F22759C979006D664F /* Main.storyboard in Resources */,
 			);
@@ -196,19 +247,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D653CB1CF91ABF33B12F598 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Piutter/Pods-Piutter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Piutter/Pods-Piutter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Piutter/Pods-Piutter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D2C0BA78425A891D171A236 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Piutter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5B0A69E32759C979006D664F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5B0A6A0B2759CF13006D664F /* NotificationsController.swift in Sources */,
+				5B9446A8275A8EE800E4BFC5 /* Extensions.swift in Sources */,
 				5B0A6A0D2759CF2D006D664F /* ConversationsController.swift in Sources */,
 				5B0A6A052759CC52006D664F /* MainTabBarController.swift in Sources */,
 				5B0A69EB2759C979006D664F /* AppDelegate.swift in Sources */,
 				5B0A6A092759CEB9006D664F /* ExploreController.swift in Sources */,
+				5B9446B1275AAF4500E4BFC5 /* Utilities.swift in Sources */,
+				5B9446AE275A975700E4BFC5 /* RegistrationController.swift in Sources */,
 				5B0A69ED2759C979006D664F /* SceneDelegate.swift in Sources */,
 				5B0A6A072759CE4B006D664F /* FeedController.swift in Sources */,
 				5B0A6A102759D27F006D664F /* Constants.swift in Sources */,
+				5B9446AA275A968B00E4BFC5 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +449,7 @@
 		};
 		5B0A69FC2759C97C006D664F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E23510BAFE9C16D61EE5097B /* Pods-Piutter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -380,6 +478,7 @@
 		};
 		5B0A69FD2759C97C006D664F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7DC41B73C91F47F34B87C3D /* Pods-Piutter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

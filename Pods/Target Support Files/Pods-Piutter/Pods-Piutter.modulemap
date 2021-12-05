@@ -1,0 +1,6 @@
+framework module Pods_Piutter {
+  umbrella header "Pods-Piutter-umbrella.h"
+
+  export *
+  module * { export * }
+}

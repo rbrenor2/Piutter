@@ -33,6 +33,41 @@ struct K {
         static let title = "Notifications"
     }
     
+    struct General {
+        static let actionButtonImage = "new_tweet"
+    }
+    
+    struct Login {
+        static let logoImage = "TwitterLogo"
+        static let mailImage = "ic_mail_outline_white_2x-1"
+        static let passwordImage = "ic_lock_outline_white_2x"
+        static let usernameImage = "ic_person_outline_white_2x"
+        static let fullnameImage = "ic_person_outline_white_2x"
+        static let emailPlaceholder = "Email"
+        static let passwordPlaceholder = "Password"
+        static let fullnamePlaceholder = "Full name"
+        static let usernamePlaceholder = "Username"
+        static let signinButtonTitle = "Login"
+        static let signupButtonTitle = "Sign up"
+        static let signupButtonTitle1 = "Don't have an account? "
+        static let signupButtonTitle2 = "Sign up"
+    }
+    
+    struct Registration {
+        static let mailImage = "ic_mail_outline_white_2x-1"
+        static let passwordImage = "ic_lock_outline_white_2x"
+        static let usernameImage = "ic_person_outline_white_2x"
+        static let fullnameImage = "ic_person_outline_white_2x"
+        static let addPhotoImage = "plus_photo"
+        static let emailPlaceholder = "Email"
+        static let passwordPlaceholder = "Password"
+        static let fullnamePlaceholder = "Full Name"
+        static let usernamePlaceholder = "Username"
+        static let signinButtonTitle1 = "Already have an account? "
+        static let signinButtonTitle2 = "Sign in"
+        static let signupButtonTitle = "Sign up"
+    }
+    
 }
 
 

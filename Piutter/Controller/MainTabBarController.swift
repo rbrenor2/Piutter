@@ -9,6 +9,15 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     // MARK: - Properties
+    let actionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .white
+        button.backgroundColor = .twitterBlue
+        button.setImage(UIImage(named: K.General.actionButtonImage), for: .normal)
+        
+        button.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
     
     // MARK: - Lifecycle
@@ -17,10 +26,30 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         configureViewController()
+        configureUI()
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func actionButtonTapped() {
+        print("Button tapped")
     }
     
     
     // MARK: - Helpers
+    
+    func configureUI() {
+        view.addSubview(actionButton)
+//        actionButton.translatesAutoresizingMaskIntoConstraints = false
+//        actionButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+//        actionButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
+//        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -64).isActive = true
+//        actionButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+        
+        
+        actionButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingBottom: 64, paddingRight: 16, width: 56, height: 56)
+        actionButton.layer.cornerRadius = 56/2
+    }
     
     func configureViewController() {
         
