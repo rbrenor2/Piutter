@@ -6,9 +6,19 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainTabBarController: UITabBarController {
     // MARK: - Properties
+    var user: User? {
+        didSet {
+            guard let nav = viewControllers?[0] as? UINavigationController else {return}
+            guard let feed = nav.viewControllers.first as? FeedController else {return}
+            
+            feed.user = user
+        }
+    }
+    
     let actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .white
@@ -24,15 +34,45 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureViewController()
-        configureUI()
+        view.backgroundColor = .twitterBlue
+//        logout()
+        fetchUser()
+        authenticateUserAndConfigureUI()
     }
     
     // MARK: - Selectors
     
     @objc func actionButtonTapped() {
         print("Button tapped")
+    }
+    
+    // MARK: - API
+    
+    func fetchUser() {
+        UserService.shared.fetchUser { user in
+            print("DEBUG: \(user)")
+        }
+    }
+    
+    func authenticateUserAndConfigureUI() {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let nav = UINavigationController(rootViewController: LoginController())
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+        } else {
+            configureViewController()
+            configureUI()
+        }
+    }
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            print("DEBUG: \(error.localizedDescription)")
+        }
     }
     
     

@@ -10,6 +10,7 @@ import UIKit
 class LoginController: UIViewController {
     
     // MARK: - Properties
+    
     private let logoImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -33,12 +34,12 @@ class LoginController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: K.Login.emailPlaceholder, placeholderColor: .white, textColor: .white, isSecureText: false)
+        let tf = Utilities().textField(withPlaceholder: K.Login.emailPlaceholder, placeholderColor: .white, textColor: .white, isSecureText: false, autocapitalizeType: .none)
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: K.Login.passwordPlaceholder, placeholderColor: .white, textColor: .white, isSecureText: true)
+        let tf = Utilities().textField(withPlaceholder: K.Login.passwordPlaceholder, placeholderColor: .white, textColor: .white, isSecureText: true, autocapitalizeType: .none)
         return tf
     }()
     
@@ -88,7 +89,22 @@ class LoginController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleLogin() {
-        print("Login tapped...")
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        
+        let credentials = LoginCredentials(email: email, password: password)
+        AuthService.shared.login(credentials: credentials) { data, error in
+            
+            if error == nil {
+                guard let tab = self.view.window?.rootViewController as? MainTabBarController else {return}
+                
+                tab.authenticateUserAndConfigureUI()
+                
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                print("DEBUG: \(String(describing: error?.localizedDescription))")
+            }
+        }
     }
     
     @objc func handleSignup() {

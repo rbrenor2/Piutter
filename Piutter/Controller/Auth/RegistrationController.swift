@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class RegistrationController: UIViewController {
     
     // MARK: - Properties
     private let imagePicker = UIImagePickerController()
+    private var profileImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -57,22 +60,22 @@ class RegistrationController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: K.Login.emailPlaceholder, placeholderColor: .white, textColor: .white, isSecureText: false)
+        let tf = Utilities().textField(withPlaceholder: K.Login.emailPlaceholder, placeholderColor: .white, textColor: .white, isSecureText: false, autocapitalizeType: .none)
         return tf
     }()
     
     private let passwordTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: K.Login.passwordPlaceholder, placeholderColor: .white, textColor: .white, isSecureText: true)
+        let tf = Utilities().textField(withPlaceholder: K.Login.passwordPlaceholder, placeholderColor: .white, textColor: .white, isSecureText: true, autocapitalizeType: .none)
         return tf
     }()
     
     private let fullnameTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: K.Login.fullnamePlaceholder, placeholderColor: .white, textColor: .white, isSecureText: false)
+        let tf = Utilities().textField(withPlaceholder: K.Login.fullnamePlaceholder, placeholderColor: .white, textColor: .white, isSecureText: false, autocapitalizeType: .words)
         return tf
     }()
     
     private let usernameTextField: UITextField = {
-        let tf = Utilities().textField(withPlaceholder: K.Login.usernamePlaceholder, placeholderColor: .white, textColor: .white, isSecureText: false)
+        let tf = Utilities().textField(withPlaceholder: K.Login.usernamePlaceholder, placeholderColor: .white, textColor: .white, isSecureText: false, autocapitalizeType: .none)
         return tf
     }()
     
@@ -129,8 +132,33 @@ class RegistrationController: UIViewController {
     
     // MARK: - Selectors
     @objc func handleSignup() {
-        print("Signup tapped...")
+        guard let profileImage = profileImage else {
+            print("DEBUG: Select profile Image")
+            return
+        }
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let username = usernameTextField.text else { return }
+
+        let credentials = AuthCredentials(profileImage: profileImage, email: email, password: username, fullname: password, username: fullname)
+        AuthService().registerUser(credentials: credentials) { error, DB_REF in
+            
+            print("DEBUG: ERROR \(String(describing: error?.localizedDescription))")
+            
+            if error == nil {
+                guard let tab = self.view.window?.rootViewController as? MainTabBarController else {return}
+                
+                tab.authenticateUserAndConfigureUI()
+                
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                print("DEBUG: not registered")
+
+            }
+        }
     }
+    
     
     @objc func handleSignin() {
         navigationController?.popViewController(animated: true)
@@ -147,6 +175,7 @@ class RegistrationController: UIViewController {
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let profileImage = info[.editedImage] as? UIImage else { return }
+        self.profileImage = profileImage
         
         self.plusPhotoButton.setImage(profileImage.withRenderingMode(.alwaysOriginal), for: .normal)
         

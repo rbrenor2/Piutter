@@ -34,14 +34,15 @@ class Utilities {
         return view
     }
     
-    func textField(withPlaceholder placeholder: String, placeholderColor: UIColor, textColor: UIColor, isSecureText: Bool) -> UITextField {
+    func textField(withPlaceholder placeholder: String, placeholderColor: UIColor, textColor: UIColor, isSecureText: Bool, autocapitalizeType:  UITextAutocapitalizationType) -> UITextField {
         
         let tf = UITextField()
         tf.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         tf.textColor = textColor
         tf.font = UIFont.systemFont(ofSize: 16)
         tf.isSecureTextEntry = isSecureText
-        
+        tf.autocapitalizationType = autocapitalizeType
+
         return tf
     }
     
