@@ -11,8 +11,8 @@ import FirebaseAuth
 class UserService {
     static let shared = UserService()
     
-    func fetchUser(withCompletion completion: @escaping(User) -> Void) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+    func fetchUser(uid: String, withCompletion completion: @escaping(User) -> Void) {
+        
         REF_USERS.child(uid).observeSingleEvent(of: .value) { snapshot in
             guard let dictionary = snapshot.value as? [String: AnyObject] else { return }
             
